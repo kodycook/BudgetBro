@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BudgetBro</string>
+    <string name="balanceString">Current Balance</string>
+</resources>
