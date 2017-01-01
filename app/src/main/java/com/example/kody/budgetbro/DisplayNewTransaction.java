@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
-import static com.example.kody.budgetbro.MainActivity.ToggleListener;
 
 /**
  * Created by Kody on 31/12/2016.
@@ -24,8 +24,19 @@ public class DisplayNewTransaction extends AppCompatActivity {
 
         ((RadioGroup) findViewById(R.id.toggleGroup)).setOnCheckedChangeListener(ToggleListener);
         Intent intent = getIntent();
-
     }
+
+    static final RadioGroup.OnCheckedChangeListener ToggleListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(final RadioGroup radioGroup, final int i) {
+            for (int j = 0; j < radioGroup.getChildCount(); j++) {
+                final ToggleButton view = (ToggleButton) radioGroup.getChildAt(j);
+                view.setChecked(view.getId() == i);
+            }
+        }
+
+
+    };
 
     public void onToggle(View view) {
         ((RadioGroup)view.getParent()).check(view.getId());
