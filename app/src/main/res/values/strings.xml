@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">BudgetBro</string>
     <string name="balanceString">Current Balance</string>
+    <string name="addButton">Add Transaction</string>
+    <string name="config">Config</string>
+    <string name="history">History</string>
+    <string name="stats">Statistics</string>
+    <string name="spare1">Spare 1</string>
+    <string name="spare2">Spare 2</string>
+    <string name="spare3">Spare 3</string>
+
 </resources>

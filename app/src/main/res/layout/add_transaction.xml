@@ -20,9 +20,9 @@
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="14sp"
-                android:textOn="Letter"
-                android:textOff="Letter"
+                android:textSize="20sp"
+                android:textOn="Debit"
+                android:textOff="Debit"
                 android:onClick="onToggle"
                 android:checked="true" />
 
@@ -30,9 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:textSize="14sp"
-                android:textOn="A4"
-                android:textOff="A4"
+                android:textSize="20sp"
+                android:textOn="Credit"
+                android:textOff="Credit"
                 android:onClick="onToggle" />
         </RadioGroup>
 
