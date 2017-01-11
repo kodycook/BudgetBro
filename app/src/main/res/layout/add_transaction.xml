@@ -4,38 +4,110 @@
     android:layout_height="match_parent"
     android:id="@+id/add_transaction">
 
+    <!--Complete: Add Date Selector Here-->
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end|center_horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="12dp"
+        android:textSize="28sp"
+        android:textColor="@color/charcoal"
+        android:hint="dd mmmm, yyyy"
+        android:onClick="selectDate"/>
+
+    <RadioGroup android:id="@+id/toggleGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/debitButton"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textOn="@string/debit"
+            android:textOff="@string/debit"
+            android:onClick="onToggle"
+            android:checked="true" />
+
+        <ToggleButton android:id="@+id/creditButton"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textOn="@string/credit"
+            android:textOff="@string/credit"
+            android:onClick="onToggle" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/transactionSummaryHint"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:padding = "16dp"/>
+
+    <!--TODO: Add amount -->
+
+    <!--TODO: Add primary and secondary level categories-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginTop="6dp">
 
-        <RadioGroup android:id="@+id/toggleGroup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="horizontal" >
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:gravity="top|center_horizontal"
+            android:paddingTop="20dp"
+            android:textSize="9sp"
+            android:textOn="Transaction\nFee"
+            android:textOff="Transaction\nFee"
+            android:layout_weight="1"
+            android:id="@+id/transaction_fee"/>
 
-            <ToggleButton
-                android:id="@+id/btn_Letter"
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textOn="Debit"
-                android:textOff="Debit"
-                android:onClick="onToggle"
-                android:checked="true" />
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:gravity="top|center_horizontal"
+            android:paddingTop="20dp"
+            android:textSize="9sp"
+            android:textOn="Currency\nFxchange"
+            android:textOff="Currency\nFxchange"
+            android:layout_weight="1"
+            android:id="@+id/currency_exchange"/>
 
-            <ToggleButton android:id="@+id/btn_A4"
-                android:layout_height="wrap_content"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:textSize="20sp"
-                android:textOn="Credit"
-                android:textOff="Credit"
-                android:onClick="onToggle" />
-        </RadioGroup>
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:gravity="top|center_horizontal"
+            android:paddingTop="20dp"
+            android:textSize="9sp"
+            android:layout_weight="1"
+            android:textOn="Tax\nDeductable"
+            android:textOff="Tax\nDeductable"
+            android:id="@+id/tax_deductable"/>
 
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:gravity="top|center_horizontal"
+            android:paddingTop="20dp"
+            android:textSize="9sp"
+            android:layout_weight="1"
+            android:textOn="Add\nReciept"
+            android:textOff="Add\nReciept"
+            android:id="@+id/add_reciept"/>
     </LinearLayout>
+
+    <!--TODO: Add in checkbox for recurring transactions-->
+
+    <!--TODO: Add a Sumbit Transaction button-->
 
 </LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <Categories
+        name="categoryList">
+        <category>Entertainment
+            <category>Clubbing/Pubbing</category>
+            <category>Events</category>
+            <category>Activities</category>
+        </category>
+        <category>Work</category>
+        <category>Transport
+            <category>Public Transport</category>
+            <category>Fuel</category>
+            <category>Service/Repair</category>
+        </category>
+        <category>Bills
+            <category>Car</category>
+            <category>Rent</category>
+            <category>Fines</category>
+        </category>
+        <category>Food/Drink
+            <category>Groceries/Snacks</category>
+            <category>Meals/Takeaway</category>
+            <category>Alcohol</category>
+        </category>
+        <category>Health
+            <category>Hygiene</category>
+            <category>Medication</category>
+            <category>Fitness</category>
+        </category>
+        <category>Clothing
+            <category>Formal</category>
+            <category>Casual</category>
+            <category>Accesories</category>
+        </category>
+        <category>Purchases
+            <category>Technology</category>
+            <category>Gifts</category>
+        </category>
+        <category>Projects
+            <category>Startup</category>
+            <category>Home Improvement</category>
+            <category>Other</category>
+        </category>
+        <category>Repayments
+            <category>Parents</category>
+            <category>Bank Loan</category>
+            <category>Car Loan</category>
+        </category>
+        <category>Savings</category>
+        <category>Miscellaneous</category>
+    </Categories>
+</resources>

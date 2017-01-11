@@ -1,12 +1,23 @@
 <resources>
     <string name="app_name">BudgetBro</string>
+
+    <!--Strings for activity_main-->
     <string name="balanceString">Current Balance</string>
     <string name="addButton">Add Transaction</string>
     <string name="config">Config</string>
     <string name="history">History</string>
     <string name="stats">Statistics</string>
-    <string name="spare1">Spare 1</string>
+    <string name="report">Report</string>
     <string name="spare2">Spare 2</string>
     <string name="spare3">Spare 3</string>
+
+    <!--Strings for add_transaction-->
+    <string name="transactionSummaryHint">Insert transaction summary here</string>
+    <string name="debit">Debit</string>
+    <string name="credit">Credit</string>
+
+    <!--Strings for menu_main-->
+    <string name="settings">Settings</string>
+    <string name="log_out">Log Out</string>
 
 </resources>
