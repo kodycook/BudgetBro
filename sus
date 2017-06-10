@@ -1,0 +1,102 @@
+[33mcommit 427c171b6f907c9bc3e9107bf7d74e9ce919a570[m
+Author: kodycook <masterkcook@hotmail.com>
+Date:   Wed Jan 11 20:35:32 2017 +1000
+
+    Initial Commit
+
+[1mdiff --git a/app/src/main/java/com/example/kody/budgetbro/NewTransaction.java b/app/src/main/java/com/example/kody/budgetbro/NewTransaction.java[m
+[1mindex 75dc03a..4a4c524 100644[m
+[1m--- a/app/src/main/java/com/example/kody/budgetbro/NewTransaction.java[m
+[1m+++ b/app/src/main/java/com/example/kody/budgetbro/NewTransaction.java[m
+[36m@@ -1,6 +1,8 @@[m
+ package com.example.kody.budgetbro;[m
+ [m
+ import android.app.DatePickerDialog;[m
+[32m+[m[32mimport android.app.Dialog;[m
+[32m+[m[32mimport android.app.DialogFragment;[m
+ import android.content.Intent;[m
+ import android.os.Bundle;[m
+ import android.support.v7.app.AppCompatActivity;[m
+[36m@@ -19,6 +21,8 @@[m [mimport java.util.Date;[m
+ import java.util.Locale;[m
+ import java.util.TimeZone;[m
+ [m
+[32m+[m[32mimport static android.R.attr.startYear;[m
+[32m+[m
+ [m
+ /**[m
+  * Created by Kody on 31/12/2016.[m
+[36m@@ -27,6 +31,9 @@[m [mimport java.util.TimeZone;[m
+ public class NewTransaction extends AppCompatActivity {[m
+ [m
+     Calendar myCalendar = Calendar.getInstance();[m
+[32m+[m[32m    int startYear = myCalendar.get(Calendar.YEAR);[m
+[32m+[m[32m    int startMonth = myCalendar.get(Calendar.MONTH);[m
+[32m+[m[32m    int startDay = myCalendar.get(Calendar.DAY_OF_MONTH);[m
+ [m
+     @Override[m
+     protected void onCreate(Bundle savedInstanceState) {[m
+[36m@@ -61,46 +68,30 @@[m [mpublic class NewTransaction extends AppCompatActivity {[m
+         // app specific stuff ..[m
+     }[m
+ [m
+[31m-    public void selectDate(View view) {[m
+[32m+[m[32m    public void selectDate(View v){[m
+[32m+[m[32m        DialogFragment dialogFragment = new StartDatePicker();[m
+[32m+[m[32m        dialogFragment.show(getFragmentManager(), "start_date_picker");[m
+[32m+[m[32m    }[m
+ [m
+[31m-        try {[m
+[32m+[m[32m    class StartDatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener {[m
+[32m+[m[32m        @Override[m
+[32m+[m[32m        public Dialog onCreateDialog(Bundle savedInstanceState) {[m
+[32m+[m[32m            // TODO Auto-generated method stub[m
+[32m+[m[32m            // Use the current date as the default date in the picker[m
+[32m+[m[32m            DatePickerDialog dialog = new DatePickerDialog(BookingFormActivity.this, this, startYear, startMonth, startDay);[m
+[32m+[m[32m            return dialog;[m
+[32m+[m[32m        }[m
+ [m
+[31m-            Calendar cal = Calendar.getInstance(TimeZone.getDefault());[m
+[31m-            DatePickerDialog datePicker = new DatePickerDialog(this,[m
+[31m-                    R.style.AppTheme,[m
+[31m-                    datePickerListener,[m
+[31m-                    cal.get(Calendar.YEAR),[m
+[31m-                    cal.get(Calendar.MONTH),[m
+[31m-                    cal.get(Calendar.DAY_OF_MONTH));[m
+[32m+[m[32m        public void onDateSet(DatePicker view, int year, int monthOfYear,[m
+[32m+[m[32m                              int dayOfMonth) {[m
+[32m+[m[32m            startYear = year;[m
+[32m+[m[32m            startMonth = monthOfYear;[m
+[32m+[m[32m            startDay = dayOfMonth;[m
+ [m
+[31m-[m
+[31m-            datePicker.show();[m
+[31m-            datePicker.setCancelable(false);[m
+[31m-            datePicker.setTitle("Select the date");[m
+[31m-            return;[m
+[31m-[m
+[31m-        } catch (Exception e) {[m
+[31m-            e.printStackTrace();[m
+         }[m
+     }[m
+ [m
+ [m
+[31m-    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {[m
+[31m-[m
+[31m-        // when dialog box is closed, below method will be called.[m
+[31m-        public void onDateSet(DatePicker view, int selectedYear, int selectedMonth, int selectedDay){[m
+[31m-[m
+[31m-[m
+[31m-            myCalendar.set(Calendar.YEAR, selectedYear);[m
+[31m-            myCalendar.set(Calendar.MONTH, selectedMonth);[m
+[31m-            myCalendar.set(Calendar.DAY_OF_MONTH, selectedDay);[m
+[31m-[m
+[31m-            TextView date = (TextView) findViewById(R.id.date);[m
+[31m-            date.setText(buildDateString());[m
+[31m-[m
+[31m-        }[m
+[31m-    };[m
+[31m-[m
+     private String buildDateString (){[m
+ [m
+         String myFormat = "MMMM dd, yyyy"; //In which you need put here[m
