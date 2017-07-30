@@ -78,8 +78,10 @@ public class NewTransaction extends AppCompatActivity {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             // TODO Auto-generated method stub
             // Use the current date as the default date in the picker
-            DatePickerDialog dialog = new DatePickerDialog(BookingFormActivity.this, this, startYear, startMonth, startDay);
-            return dialog;
+            //DatePickerDialog dialog = new DatePickerDialog(BookingFormActivity.this, this, startYear, startMonth, startDay);
+            //return dialog;
+
+            return null;
         }
 
         public void onDateSet(DatePicker view, int year, int monthOfYear,
